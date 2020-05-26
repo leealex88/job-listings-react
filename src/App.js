@@ -1,9 +1,9 @@
 import React from "react";
-
+import State from "./components/State";
 import "./App.css";
 
 function App() {
-  return <div className="App">App js</div>;
+  return <State />;
 }
 
 export default App;
