@@ -1,20 +1,30 @@
 import React, { useState } from "react";
 import data from "../data/data.json";
+import Job from "./Job";
 function State() {
-  const [allJobs, setAllJobs] = useState(data);
+  // const [allJobs, setAllJobs] = useState(data);
+  const [searchTerm, setSearchTerm] = useState("");
 
-  console.log(allJobs);
+  console.log(data);
+
+  const filterTheRole =
+    searchTerm === ""
+      ? data
+      : data.filter((job) => job.role.toLowerCase() === searchTerm);
 
   return (
     <div>
-      {allJobs.map((job, index) => (
+      <div>
+        <input
+          placeholder="search the job"
+          onChange={(e) => setSearchTerm(e.target.value.toLowerCase())}
+          value={searchTerm}
+        ></input>
+      </div>
+
+      {filterTheRole.map((job, index) => (
         <div key={index}>
-          <div>
-            <img src={job.logo} alt="" />
-          </div>
-          <div>
-            <p>{job.company}</p>
-          </div>
+          <Job job={job} setSearchTerm={setSearchTerm} />
         </div>
       ))}
     </div>
