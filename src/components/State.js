@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import data from "../data/data.json";
-import Job from "./Job";
+import Header from "./Header";
+import SearchInput from "./SearchInput";
+import Jobs from "./Jobs";
+
 function State() {
   // const [allJobs, setAllJobs] = useState(data);
   const [searchTerm, setSearchTerm] = useState("");
@@ -13,21 +16,15 @@ function State() {
       : data.filter((job) => job.role.toLowerCase() === searchTerm);
 
   return (
-    <div>
-      <div>
-        <input
-          placeholder="search the job"
-          onChange={(e) => setSearchTerm(e.target.value.toLowerCase())}
-          value={searchTerm}
-        ></input>
-      </div>
-
-      {filterTheRole.map((job, index) => (
-        <div key={index}>
-          <Job job={job} setSearchTerm={setSearchTerm} />
+    <>
+      <Header />
+      <div className="container">
+        <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+        <div className="row">
+          <Jobs setSearchTerm={setSearchTerm} filterTheRole={filterTheRole} />
         </div>
-      ))}
-    </div>
+      </div>
+    </>
   );
 }
 
