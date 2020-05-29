@@ -1,5 +1,8 @@
 import React, { Fragment } from "react";
+// import data from "../data/data.json";
 function Job({ job, setSearchTerm }) {
+  // console.log("job", job);
+
   return (
     <Fragment>
       <div>
@@ -10,21 +13,39 @@ function Job({ job, setSearchTerm }) {
         />
       </div>
       <div className="left-panel-listings">
-        <p>{job.company}</p>
-        <p>{job.position}</p>
+        <div>
+          <p className="company">
+            {job.company} {job.new ? <button> New! </button> : null}{" "}
+            {job.featured ? <button> FEATURED </button> : null}{" "}
+          </p>
+        </div>
+        <div>
+          <p className="position">{job.position}</p>
+        </div>
         <div className="dots-listings">
-          <p>{job.postedAt}</p>
-          <p>{job.contract}</p>
+          <p>
+            {job.postedAt} <span>&#8226;</span>
+          </p>
+
+          <p>
+            {job.contract} <span>&#8226;</span>
+          </p>
+
           <p>{job.location}</p>
         </div>
       </div>
-      <div className="right-panel-listings">
-        <div onClick={() => setSearchTerm(job.role.toLowerCase())}>
-          {job.role}
-        </div>
-        <div>{job.level}</div>
+
+      <div
+        className="buttons"
+        onClick={() => setSearchTerm(job.role.toLowerCase())}
+      >
+        <button className="singleB">{job.role}</button>
+
+        <button className="singleB">{job.level}</button>
         {job.languages.map((language, index) => (
-          <div key={index}>{language}</div>
+          <button className="singleB" key={index}>
+            {language}
+          </button>
         ))}
       </div>
     </Fragment>
