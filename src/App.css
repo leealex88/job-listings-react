@@ -120,12 +120,12 @@ body {
 
 .label-new,
 .label-future {
-    margin-left: 10px;
-    font-size: 10px;
+    margin-left: 4px;
+    font-size: 9px;
     border-radius: 12px;
     color: #f0f8ff;
     padding: 2px 8px;
-    height: 23px;
+    height: 20px;
     font-weight: bolder;
 
 }
