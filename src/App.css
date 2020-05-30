@@ -93,7 +93,13 @@ body {
 }
 
 .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-self: center;
+    flex-wrap: wrap;
     margin: auto;
+    width: 65%;
 }
 
 .singleB {
