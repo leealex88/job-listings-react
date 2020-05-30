@@ -15,8 +15,11 @@ function Job({ job, setSearchTerm }) {
       <div className="left-panel-listings">
         <div>
           <p className="company">
-            {job.company} {job.new ? <button> New! </button> : null}{" "}
-            {job.featured ? <button> FEATURED </button> : null}{" "}
+            {job.company}{" "}
+            {job.new ? <button className="label-new"> New! </button> : null}{" "}
+            {job.featured ? (
+              <button className="label-future"> FEATURED </button>
+            ) : null}{" "}
           </p>
         </div>
         <div>

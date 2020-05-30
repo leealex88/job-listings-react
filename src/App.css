@@ -117,3 +117,23 @@ body {
 .extraP {
     margin: 0 auto;
 }
+
+.label-new,
+.label-future {
+    margin-left: 10px;
+    font-size: 10px;
+    border-radius: 12px;
+    color: #f0f8ff;
+    padding: 2px 8px;
+    height: 23px;
+    font-weight: bolder;
+
+}
+
+.label-future {
+    background-color: #000;
+}
+
+.label-new {
+    background-color: #5ba4a4;
+}
