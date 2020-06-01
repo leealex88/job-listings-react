@@ -1,8 +1,12 @@
 import React, { Fragment } from "react";
-// import data from "../data/data.json";
-function Job({ job, setSearchTerm }) {
-  // console.log("job", job);
 
+function Job({
+  job,
+  setSearchTermExcludeDuplicates,
+  filterJobRole,
+  filterJobLevel,
+  filterJobLanguage,
+}) {
   return (
     <Fragment>
       <div>
@@ -38,15 +42,35 @@ function Job({ job, setSearchTerm }) {
         </div>
       </div>
 
-      <div
-        className="buttons"
-        onClick={() => setSearchTerm(job.role.toLowerCase())}
-      >
-        <button className="singleB">{job.role}</button>
+      <div className="buttons">
+        <button
+          className="singleB"
+          onClick={() => {
+            setSearchTermExcludeDuplicates(job.role);
+            filterJobRole(job.role);
+          }}
+        >
+          {job.role}
+        </button>
 
-        <button className="singleB">{job.level}</button>
+        <button
+          className="singleB"
+          onClick={() => {
+            setSearchTermExcludeDuplicates(job.level);
+            filterJobLevel(job.level);
+          }}
+        >
+          {job.level}
+        </button>
         {job.languages.map((language, index) => (
-          <button className="singleB" key={index}>
+          <button
+            className="singleB"
+            key={index}
+            onClick={() => {
+              setSearchTermExcludeDuplicates(language);
+              filterJobLanguage(language);
+            }}
+          >
             {language}
           </button>
         ))}
