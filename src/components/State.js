@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import data from "../data/data.json";
 import Header from "./Header";
 import SearchInput from "./SearchInput";
@@ -8,8 +8,14 @@ function State() {
   const [currentJobs, setCurrentJobs] = useState([...data]);
   const [searchTerm, setSearchTerm] = useState([]);
 
-  console.log(data);
-  console.log("currentSearch", currentJobs);
+  console.log("searchTerm", searchTerm);
+  console.log("currentJobs", currentJobs);
+  useEffect(() => {
+    effect;
+    return () => {
+      cleanup;
+    };
+  }, [searchTerm]);
 
   const filterJobRole = (checkedValue) => {
     const filterRole = currentJobs.filter((job) => job.role === checkedValue);
@@ -36,12 +42,22 @@ function State() {
       ? null
       : setSearchTerm([...searchTerm, checkedValue]);
   };
+  const removedButton = (buttonValue) => {
+    const filter = searchTerm.filter((string) => string !== buttonValue);
+    setSearchTerm(filter);
+  };
 
   return (
     <>
       <Header />
       <div className="container">
-        <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+        <SearchInput
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+          removedButton={removedButton}
+          setCurrentJobs={setCurrentJobs}
+          currentJobs={currentJobs}
+        />
         <div className="row">
           {}
           <Jobs
@@ -52,6 +68,7 @@ function State() {
             filterJobRole={filterJobRole}
             filterJobLevel={filterJobLevel}
             filterJobLanguage={filterJobLanguage}
+            setCurrentJobs={setCurrentJobs}
           />
         </div>
       </div>
