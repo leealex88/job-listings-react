@@ -10,12 +10,6 @@ function State() {
 
   console.log("searchTerm", searchTerm);
   console.log("currentJobs", currentJobs);
-  useEffect(() => {
-    effect;
-    return () => {
-      cleanup;
-    };
-  }, [searchTerm]);
 
   const filterJobRole = (checkedValue) => {
     const filterRole = currentJobs.filter((job) => job.role === checkedValue);
@@ -28,6 +22,15 @@ function State() {
     setCurrentJobs(filterRole);
     console.log("2 value", filterRole);
   };
+
+  // useEffect(
+  //   (checkedValue) => {
+
+  //     const check =
+  //       searchTerm.length === 0 ? data : setCurrentJobs();
+  //   },
+  //   [searchTerm]
+  // );
 
   const filterJobLanguage = (checkedValue) => {
     const filterRole = currentJobs.filter((job) =>
