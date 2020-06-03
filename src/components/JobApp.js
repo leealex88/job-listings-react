@@ -5,7 +5,7 @@ import SearchInput from "./SearchInput";
 import Jobs from "./Jobs";
 
 function JobApp() {
-  const [keyWords, setKeyWords] = useState(["CSS"]);
+  const [keyWords, setKeyWords] = useState([]);
   console.log("running job app component");
   const addKeyWord = (keyWord) => {
     return keyWords.includes(keyWord)
