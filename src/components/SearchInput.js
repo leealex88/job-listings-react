@@ -1,14 +1,9 @@
 import React from "react";
 
-function SearchInput({
-  searchTerm,
-  removedButton,
-  setCurrentJobs,
-  currentJobs,
-}) {
+function SearchInput({ keyWords, removedButton }) {
   return (
     <div className="search-input">
-      {searchTerm.map((element, index) => (
+      {keyWords.map((element, index) => (
         <button
           className="singleB"
           key={index}

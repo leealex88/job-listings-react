@@ -1,28 +1,12 @@
 import React from "react";
 import Job from "./Job";
-function Jobs({
-  setSearchTerm,
-  data,
-  searchTerm,
-  setSearchTermExcludeDuplicates,
-  filterJobRole,
-  filterJobLevel,
-  filterJobLanguage,
-}) {
+function Jobs({ jobsToShow, addKeyWord }) {
   return (
     <>
-      {data.map((job, index) => (
-        <div className="col-12 sm-col-12 md-col-12">
-          <div key={index} className="each-job">
-            <Job
-              job={job}
-              setSearchTerm={setSearchTerm}
-              searchTerm={searchTerm}
-              setSearchTermExcludeDuplicates={setSearchTermExcludeDuplicates}
-              filterJobRole={filterJobRole}
-              filterJobLevel={filterJobLevel}
-              filterJobLanguage={filterJobLanguage}
-            />
+      {jobsToShow.map((job, index) => (
+        <div className="col-12 sm-col-12 md-col-12" key={index}>
+          <div className="each-job">
+            <Job job={job} addKeyWord={addKeyWord} />
           </div>
         </div>
       ))}

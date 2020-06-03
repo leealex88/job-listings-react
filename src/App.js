@@ -1,10 +1,10 @@
 import React from "react";
-import State from "./components/State";
+import JobApp from "./components/JobApp";
 import "./App.css";
 import "./grid.css";
 
 function App() {
-  return <State />;
+  return <JobApp />;
 }
 
 export default App;

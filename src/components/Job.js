@@ -1,12 +1,6 @@
 import React, { Fragment } from "react";
 
-function Job({
-  job,
-  setSearchTermExcludeDuplicates,
-  filterJobRole,
-  filterJobLevel,
-  filterJobLanguage,
-}) {
+function Job({ job, addKeyWord }) {
   return (
     <Fragment>
       <div>
@@ -46,8 +40,7 @@ function Job({
         <button
           className="singleB"
           onClick={() => {
-            setSearchTermExcludeDuplicates(job.role);
-            filterJobRole(job.role);
+            addKeyWord(job.role);
           }}
         >
           {job.role}
@@ -56,8 +49,7 @@ function Job({
         <button
           className="singleB"
           onClick={() => {
-            setSearchTermExcludeDuplicates(job.level);
-            filterJobLevel(job.level);
+            addKeyWord(job.level);
           }}
         >
           {job.level}
@@ -67,11 +59,21 @@ function Job({
             className="singleB"
             key={index}
             onClick={() => {
-              setSearchTermExcludeDuplicates(language);
-              filterJobLanguage(language);
+              addKeyWord(language);
             }}
           >
             {language}
+          </button>
+        ))}
+        {job.tools.map((tool, index) => (
+          <button
+            className="singleB"
+            key={index}
+            onClick={() => {
+              addKeyWord(tool);
+            }}
+          >
+            {tool}
           </button>
         ))}
       </div>

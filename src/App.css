@@ -44,7 +44,6 @@ body {
 
 .each-job {
     display: flex;
-    /* border: solid 1px pink; */
     height: 100px;
     background-color: hsl(180, 31%, 95%);
     padding: 15px;
