@@ -25,7 +25,7 @@ body {
 
 .search-input {
     width: 100%;
-    background-color: hsl(180, 31%, 95%);
+    background-color: white;
     padding: 15px;
     box-shadow: 0px 2px 9px hsla(180, 5%, 36%, 0.37);
     margin-bottom: 20px;
@@ -36,7 +36,7 @@ body {
 
 .each-job {
     display: flex;
-    background-color: hsl(180, 31%, 95%);
+    background-color: white;
     padding: 15px;
     box-shadow: 0px 2px 9px hsla(180, 5%, 36%, 0.37);
     margin-bottom: 20px;
@@ -99,7 +99,7 @@ body {
     color: hsl(180, 29%, 50%);
     font-size: 10px;
     margin-right: 5px;
-    box-shadow: 0px 2px 9px hsla(180, 5%, 36%, 0.37);
+    /* box-shadow: 0px 2px 9px hsla(180, 5%, 36%, 0.37); */
     border-color: hsl(180, 52%, 96%);
 
 }
@@ -141,7 +141,7 @@ body {
     color: hsl(180, 29%, 50%);
     font-size: 10px;
     margin-right: 5px;
-    box-shadow: 0px 2px 9px hsla(180, 5%, 36%, 0.37);
+    /* box-shadow: 0px 2px 9px hsla(180, 5%, 36%, 0.37); */
     border-color: hsl(180, 52%, 96%);
 }
 
