@@ -40,7 +40,11 @@ function JobApp() {
     <>
       <Header />
       <div className="container">
-        <SearchInput keyWords={keyWords} removedButton={removeKeyWord} />
+        <SearchInput
+          keyWords={keyWords}
+          removedButton={removeKeyWord}
+          setKeyWords={setKeyWords}
+        />
         <div className="row">
           {}
           <Jobs jobsToShow={jobsToShow} addKeyWord={addKeyWord} />

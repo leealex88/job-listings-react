@@ -3,14 +3,14 @@ import React, { Fragment } from "react";
 function Job({ job, addKeyWord }) {
   return (
     <Fragment>
-      <div>
+      <div className="image">
         <img
           className="job-picture"
           src={`${process.env.PUBLIC_URL}/${job.logo.slice(2)}`}
           alt=""
         />
       </div>
-      <div className="left-panel-listings">
+      <div className="left-panel-listings col-12">
         <div>
           <p className="company">
             {job.company}{" "}
@@ -36,7 +36,7 @@ function Job({ job, addKeyWord }) {
         </div>
       </div>
 
-      <div className="buttons">
+      <div className="button col-12">
         <button
           className="singleB"
           onClick={() => {

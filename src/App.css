@@ -13,38 +13,29 @@ body {
 
 .header {
     background-color: hsl(180, 29%, 50%);
-}
-
-.header-picture {
-    height: 100px;
-    width: 100%;
-}
-
-.job-picture {
-    height: 80%;
-}
-
-.header {
-    height: 100px;
+    height: 144px;
     background-image: linear-gradient();
     margin-bottom: -20px;
 }
 
+.header-picture {
+    height: 100%;
+    width: 100%;
+}
+
 .search-input {
     width: 100%;
-    /* text-align: center; */
-    height: 50px;
     background-color: hsl(180, 31%, 95%);
     padding: 15px;
     box-shadow: 0px 2px 9px hsla(180, 5%, 36%, 0.37);
     margin-bottom: 20px;
     border-radius: 4px;
     position: relative;
+    display: flex;
 }
 
 .each-job {
     display: flex;
-    height: 100px;
     background-color: hsl(180, 31%, 95%);
     padding: 15px;
     box-shadow: 0px 2px 9px hsla(180, 5%, 36%, 0.37);
@@ -91,7 +82,7 @@ body {
     font-weight: 600;
 }
 
-.buttons {
+.button {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -135,4 +126,72 @@ body {
 
 .label-new {
     background-color: #5ba4a4;
+}
+
+.singleB:hover {
+    background-color: hsl(180, 8%, 52%);
+    border-color: hsl(180, 8%, 52%);
+    color: white;
+}
+
+.singleB-input {
+    background-color: hsl(180, 52%, 96%);
+    border-radius: 4px;
+    font-weight: 600;
+    color: hsl(180, 29%, 50%);
+    font-size: 10px;
+    margin-right: 5px;
+    box-shadow: 0px 2px 9px hsla(180, 5%, 36%, 0.37);
+    border-color: hsl(180, 52%, 96%);
+}
+
+.key-button {
+    margin-right: 0px;
+    border-radius: 4px 0px 0px 4px;
+}
+
+.x-button {
+    margin-left: 0px;
+    border-radius: 0px 4px 4px 0px;
+    background-color: hsl(180, 29%, 50%);
+    border-color: hsl(180, 29%, 50%);
+    color: white;
+}
+
+.clear-button {
+    box-shadow: 0px 0px 0px hsla(0, 0%, 0%, 0.37);
+    border-color: hsl(180, 52%, 96%);
+    margin-left: auto;
+    font-size: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    .each-job {
+        flex-direction: column;
+    }
+
+    .image {
+        margin-top: -50px;
+    }
+
+    .each-job {
+        margin-top: 40px;
+    }
+
+    .search-input {
+        flex-wrap: wrap;
+    }
+
+    .dots-listings {
+        margin-bottom: 10px;
+    }
+
+    .left-panel-listings {
+        border-bottom: solid 1px #E0E0E0;
+        border-bottom-width: 80%;
+    }
+
+    .button {
+        justify-content: flex-start;
+    }
 }
